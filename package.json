@@ -26,8 +26,29 @@
     "extends": [
       "react-app",
       "react-app/jest",
+      "plugin:import/recommended",
+      "plugin:import/typescript",
       "prettier"
-    ]
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "moduleDirectory": [
+            "node_modules",
+            "."
+          ]
+        },
+        "typescript": {
+          "moduleDirectory": [
+            "node_modules",
+            "."
+          ]
+        }
+      }
+    },
+    "rules": {
+      "import/no-relative-packages": "error"
+    }
   },
   "browserslist": {
     "production": [
@@ -43,6 +64,8 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
     "prettier": "3.2.5"
   }
 }
